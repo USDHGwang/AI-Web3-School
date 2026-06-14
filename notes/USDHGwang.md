@@ -42,7 +42,20 @@ AI x Web3 School
 # 2026-06-13
 <!-- DAILY_CHECKIN_2026-06-13_START -->
 
-備戰hackathon
+Hackathon 交件日。上午把 GLM-5.1 長程 agent demo 收尾提交，下午和晚上繼續打磨產品完成度。
+
+做了什麼：
+
+GLM-5.1 三幕 demo 定稿提交：合規執行 → 抗 prompt injection → 確定性攔截（A:Target + B:Recipient + D:Amount REJECT）
+Render 公開部署上線，加了 render.yaml 一鍵部署
+中文 Console（/zh）、agent walkthrough 頁面（/agent）
+啟動時自動填充 demo 資料（auto-seed），冷啟動不再看到空表
+Dashboard 視覺統一到 Console 同款深色主題，GATE 和 Reputation 加一鍵範例
+學到什麼：
+
+GLM-5.1 在長程 loop 裡太自律——spec 給足資訊後，agent 自己就不會犯規，導致「GATE 攔截 → 自我修正」的迴圈在 live demo 裡觸發不了。最後選擇誠實面對：用 agent 的 process adjustment 行為（operator 叫 approve max，GLM 讀授權條款自己改 bounded）+ selftest 裡的確定性修正迴圈當證據，不腳本化。
+冷啟動體驗比 UI 美觀更影響第一印象。Render 每次 deploy 是乾淨環境，store 空的，打開就是空表格。加 auto-seed 後任何人第一次開都有資料可看。
+Demo 不只展示功能，要降操作門檻。Dashboard 的 GATE tab 原本要手填 JSON，加了 one-click example 後，Demo Day 不需要手動打字就能跑完全程。
 <!-- DAILY_CHECKIN_2026-06-13_END -->
 
 # 2026-06-12
